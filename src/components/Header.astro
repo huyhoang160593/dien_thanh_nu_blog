@@ -1,0 +1,22 @@
+---
+import { Icon } from "astro-icon";
+---
+
+<header class="flex border-b">
+  <section id="header-left" class="border-r">
+    <button title="Open Menu" type="button" class="w-16 p-4">
+      <Icon pack="carbon" name="menu" />
+    </button>
+  </section>
+  <section
+    id="header-center"
+    class="flex-grow flex justify-center items-center"
+  >
+    <span class="text-3xl font-bold">Điện Thánh Nữ</span>
+  </section>
+  <section id="header-right" class="border-l">
+    <button title="Blogs" type="button" class="w-16 p-4">
+      <Icon pack="carbon" name="document" />
+    </button>
+  </section>
+</header>
