@@ -1,15 +1,47 @@
 ---
+import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout title="Chào mừng tới Điện Thánh nữ" class="px-4">
+  <section class="flex items-center justify-center">
+    <div class="flex flex-col gap-2">
+      <p> - Người nghe hàng tháng: xxx.xxx.xxx nguời nghe</p>
+      <p> - Người theo dõi: xxx.xxx.xxx người</p>
+      <p> - Top các thành phố nghe nhiều nhất: Việt Nam, ...</p>
+      <p>Cập nhật vào hồi xx-xx-xxxx xx:xx:xx</p>
+    </div>
+    <div>
+      <img class="h-36 w-36 rounded-full border-2 border-black object-cover
+      " src="/iu_avatar.jpg" alt="IU avatar" />
+    </div>
+  </section>
+
+  <section>
+    <h2 class="text-2xl font-bold">Bài viết mới nhất</h2>
+    <article class="my-4 flex items-center gap-4 rounded-lg border border-dashed border-black">
+      <img class="h-36 w-36" src="/No_image_available.svg" alt="No image available" />
+      <div>
+        <h1 class="text-xl font-bold">Tiêu đề</h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum atque
+          explicabo sequi non nam. Dolores temporibus cum iste a amet facere,
+          tempore quaerat voluptatum voluptatibus veritatis molestias laboriosam
+          facilis quae?
+        </p>
+      </div>
+    </article>
+
+    <section>
+      <h2 class="text-2xl font-bold">Bài viết gần đây</h2>
+      <article class="flex flex-col">
+        <h1 class="text-xl font-bold">Tiêu đề</h1>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero iure
+          corporis voluptate recusandae numquam temporibus maxime deserunt
+          minima fuga consequatur sit tempore et ut officia modi deleniti,
+          cupiditate dolorem aspernatur?
+        </p>
+      </article>
+    </section>
+  </section>
+</BaseLayout>
