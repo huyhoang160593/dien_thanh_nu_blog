@@ -4,9 +4,9 @@ import BaseHeader from "../components/BaseHeader.astro";
 
 interface Props {
   title: string;
-  class?: string;
+  classNames?: string;
 }
-const { title, class: mainClass } = Astro.props;
+const { title, classNames } = Astro.props;
 ---
 
 <html lang="en">
@@ -19,7 +19,7 @@ const { title, class: mainClass } = Astro.props;
   </head>
   <body>
     <BaseHeader />
-    <main class={mainClass}>
+    <main class={classNames}>
       <slot />
     </main>
     <BaseFooter />
