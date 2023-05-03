@@ -18,7 +18,13 @@ devDependencies:
   '@unocss/astro':
     specifier: ^0.51.8
     version: 0.51.8(rollup@3.21.3)(vite@4.3.4)
+  '@unocss/preset-typography':
+    specifier: ^0.51.8
+    version: 0.51.8
   '@unocss/preset-uno':
+    specifier: ^0.51.8
+    version: 0.51.8
+  '@unocss/preset-web-fonts':
     specifier: ^0.51.8
     version: 0.51.8
   '@unocss/reset':
@@ -848,12 +854,26 @@ packages:
       '@unocss/extractor-arbitrary-variants': 0.51.8
     dev: true
 
+  /@unocss/preset-typography@0.51.8:
+    resolution: {integrity: sha512-cqHzwHj8cybQutPOXg5g81Lww0gWU0DIVNUpLy5g8qW+w5y4rTlQ4pNw5z1x3CyHUHO2++HApN8m07zJL6RA1w==}
+    dependencies:
+      '@unocss/core': 0.51.8
+      '@unocss/preset-mini': 0.51.8
+    dev: true
+
   /@unocss/preset-uno@0.51.8:
     resolution: {integrity: sha512-akBkjSDqFhuiLPPOu+t+bhae1/ZRjcKnmMMGekSBoJvE3CfYsDpkYgzlj+U1NhCtmKXHeDZKD8spUJj5Jvea1g==}
     dependencies:
       '@unocss/core': 0.51.8
       '@unocss/preset-mini': 0.51.8
       '@unocss/preset-wind': 0.51.8
+    dev: true
+
+  /@unocss/preset-web-fonts@0.51.8:
+    resolution: {integrity: sha512-s9kKEiV21qYTdrfb3uZRc+Eos1e1/UN6lCC4KPqzD5LfdsZgel5a0xD9RpKUoKOnPgzDkvg22yn8rfsC5NBafg==}
+    dependencies:
+      '@unocss/core': 0.51.8
+      ofetch: 1.0.1
     dev: true
 
   /@unocss/preset-wind@0.51.8:
@@ -1351,6 +1371,10 @@ packages:
     resolution: {integrity: sha512-0je+qPKHEMohvfRTCEo3CrPG6cAzAYgmzKyxRiYSSDkS6eGJdyVJm7WaYA5ECaAD9wLB2T4EEeymA5aFVcYXCA==}
     engines: {node: '>=6'}
     dev: false
+
+  /destr@1.2.2:
+    resolution: {integrity: sha512-lrbCJwD9saUQrqUfXvl6qoM+QN3W7tLV5pAOs+OqOmopCCz/JkE05MHedJR1xfk4IAnZuJXPVuN5+7jNA2ZCiA==}
+    dev: true
 
   /devalue@4.3.0:
     resolution: {integrity: sha512-n94yQo4LI3w7erwf84mhRUkUJfhLoCZiLyoOZ/QFsDbcWNZePrLwbQpvZBUG2TNxwV3VjCKPxkiiQA6pe3TrTA==}
@@ -2676,6 +2700,10 @@ packages:
       '@types/nlcst': 1.0.0
     dev: false
 
+  /node-fetch-native@1.1.0:
+    resolution: {integrity: sha512-nl5goFCig93JZ9FIV8GHT9xpNqXbxQUzkOmKIMKmncsBH9jhg7qKex8hirpymkBFmNQ114chEEG5lS4wgK2I+Q==}
+    dev: true
+
   /node-releases@2.0.10:
     resolution: {integrity: sha512-5GFldHPXVG/YZmFzJvKK2zDSzPKhEp0+ZR5SVaoSag9fsL5YgHbUHDfnG5494ISANDcK4KwPXAx2xqVEydmd7w==}
     dev: false
@@ -2697,6 +2725,14 @@ packages:
     dependencies:
       path-key: 4.0.0
     dev: false
+
+  /ofetch@1.0.1:
+    resolution: {integrity: sha512-icBz2JYfEpt+wZz1FRoGcrMigjNKjzvufE26m9+yUiacRQRHwnNlGRPiDnW4op7WX/MR6aniwS8xw8jyVelF2g==}
+    dependencies:
+      destr: 1.2.2
+      node-fetch-native: 1.1.0
+      ufo: 1.1.1
+    dev: true
 
   /onetime@5.1.2:
     resolution: {integrity: sha512-kbpaSSGJTWdAY5KPVeMOKXSrPtr8C8C7wodJbcsd51jRnmD+GZu8Y0VoU6Dm5Z4vWr0Ig/1NKuWRKf7j5aaYSg==}
@@ -3390,6 +3426,10 @@ packages:
     engines: {node: '>=12.20'}
     hasBin: true
     dev: false
+
+  /ufo@1.1.1:
+    resolution: {integrity: sha512-MvlCc4GHrmZdAllBc0iUDowff36Q9Ndw/UzqmEKyrfSzokTd9ZCy1i+IIk5hrYKkjoYVQyNbrw7/F8XJ2rEwTg==}
+    dev: true
 
   /unconfig@0.3.7:
     resolution: {integrity: sha512-1589b7oGa8ILBYpta7TndM5mLHLzHUqBfhszeZxuUBrjO/RoQ52VGVWsS3w0C0GLNxO9RPmqkf6BmIvBApaRdA==}
