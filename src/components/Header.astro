@@ -16,7 +16,7 @@ const mainRouter = [
   <nav class="text-xl xl:text-2xl flex gap-2 items-center">
     {
       mainRouter.map((item) => (
-        <HeaderLink href={item.href} aria-hidden="true">{item.label}</HeaderLink>
+        <HeaderLink href={item.href} data-hidden='true'>{item.label}</HeaderLink>
       ))
     }
     <HeaderLink

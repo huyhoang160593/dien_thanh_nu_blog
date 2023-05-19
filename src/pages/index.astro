@@ -1,23 +1,43 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Footer from '../components/Footer.astro';
-import Header from '../components/Header.astro';
-import { SITE_DESCRIPTION,SITE_TITLE } from '../consts';
+import BaseHead from "../components/BaseHead.astro";
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+import { SITE_DESCRIPTION,SITE_TITLE } from "../consts";
 ---
 
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header />
-		<main>
-      <section id="introduce">
-        <h1>Đây là <span>IU</span></h1>
-        <h2>Ca sĩ - Diễn viên - Nguời của công chúng</h2>
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <body>
+    <Header />
+    <main>
+      <section aria-label="introduction">
+        <div>
+          <h1>Đây là <span>IU</span></h1>
+          <h2>Ca sĩ - Diễn viên - Nguời của công chúng</h2>
+        </div>
+        <img src="/iu-image.jpg" alt="image of IU">
       </section>
-		</main>
-		<Footer />
-	</body>
+      <section aria-label="spotify-data">
+        <h1>Dữ liệu spotify</h1>
+        <!-- TODO: sử dụng Spotify API để crawl và hiển thị dữ liệu của idol -->
+      </section>
+      <section aria-label="latest-blog">
+        <h1>Bài viết mới nhất</h1>
+        <article>
+          <h2 aria-label="title">Tiêu đề</h2>
+          <section aria-label="created-time">19-05-2023</section>
+          <section aria-label="minutes-to-read">5 phút đọc</section>
+          <section aria-label="intro">Phần mở đầu của bài viết</section>
+        </article>
+      </section>
+      <section aria-label="latest-video">
+        <h1>Video ca nhạc gần đây</h1>
+        <!-- TODO: sử dụng https://github.com/justinribeiro/lite-youtube để render video dễ hơn -->
+      </section>
+    </main>
+    <Footer />
+  </body>
 </html>

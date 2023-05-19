@@ -1,16 +1,20 @@
 ---
 import type { HTMLAttributes } from "astro/types";
 
-type Props = HTMLAttributes<"a">
+export interface Props extends HTMLAttributes<"a"> {
+  ["data-hidden"]?: "true" | "false" | null | undefined;
+}
 
 const { href, class: className, target, ...props } = Astro.props;
 
 const { pathname } = Astro.url;
 // const isActive = href === pathname || href === pathname.replace(/\/$/, "");
-const isDetailBlog = href === '/blog' && /\/blog\//.test(pathname)
+const isDetailBlog = href === "/blog" && /\/blog\//.test(pathname);
 const isActive = href === pathname || isDetailBlog;
 const isOpenNewTab = target === "_blank";
+const isNotHidden = !props["data-hidden"] || props["aria-hidden"] === "false";
 ---
+
 <a
   href={href}
   class:list={[
@@ -19,8 +23,8 @@ const isOpenNewTab = target === "_blank";
     {
       ["font-extrabold underline decoration-wavy decoration-2"]: isActive,
       ["decoration-none"]: !isActive,
-      ["hidden xl:inline-flex"]: props['aria-hidden'] === "true",
-      ["inline-flex"]: !props['aria-hidden'] || props['aria-hidden'] === 'false'
+      ["hidden xl:inline-flex"]: !isNotHidden,
+      ["inline-flex"]: isNotHidden,
     },
   ]}
   {...props}

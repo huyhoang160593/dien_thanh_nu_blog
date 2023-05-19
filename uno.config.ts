@@ -2,11 +2,9 @@ import { defineConfig, presetIcons, presetTypography, presetUno, presetWebFonts 
 
 export default defineConfig({
   presets: [
-    presetUno(),
+    presetUno({}),
     presetTypography(),
-    presetIcons({
-
-    }),
+    presetIcons({}),
     presetWebFonts({
       fonts: {
         rowdies: 'Rowdies'
