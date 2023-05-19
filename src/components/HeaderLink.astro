@@ -2,7 +2,7 @@
 import type { HTMLAttributes } from "astro/types";
 
 export interface Props extends HTMLAttributes<"a"> {
-  ["data-hidden"]?: "true" | "false" | null | undefined;
+  ["data-mobile"]?: "true" | "false" | null | undefined;
 }
 
 const { href, class: className, target, ...props } = Astro.props;
@@ -12,11 +12,12 @@ const { pathname } = Astro.url;
 const isDetailBlog = href === "/blog" && /\/blog\//.test(pathname);
 const isActive = href === pathname || isDetailBlog;
 const isOpenNewTab = target === "_blank";
-const isNotHidden = !props["data-hidden"] || props["aria-hidden"] === "false";
+const isNotHidden = !props["data-mobile"] || props["data-mobile"] === "false";
 ---
 
 <a
   href={href}
+  target={target}
   class:list={[
     className,
     "px-2 py-1  text-purple rounded-lg hover:bg-purple-2",

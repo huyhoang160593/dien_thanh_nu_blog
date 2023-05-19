@@ -12,20 +12,37 @@ import { SITE_DESCRIPTION,SITE_TITLE } from "../consts";
   </head>
   <body>
     <Header />
-    <main>
-      <section aria-label="introduction">
-        <div>
-          <h1>Đây là <span>IU</span></h1>
-          <h2>Ca sĩ - Diễn viên - Nguời của công chúng</h2>
+    <main class="px-1 md:px-6 lg:px-12 xl:px-24">
+      <section aria-label="introduction" class:list={["min-h-screen relative"]}>
+        <div
+          class="absolute z-1 translate-y-85 lg:translate-y-100 xl:translate-x-[40%]"
+        >
+          <h1 class="text-4xl md:text-5xl lg:text-6xl xl:text-7xl">
+            This is
+            <span class="font-bold text-transparent bg-clip-text bg-gradient-to-l from-violet-500 to-fuchsia-500">
+              IU
+            </span>
+          </h1>
+          <h2 class="text-md md:text-lg lg:text-3xl">
+            Ca sĩ - Diễn viên - Nguời của công chúng
+          </h2>
         </div>
-        <img src="/iu-image.jpg" alt="image of IU">
+        <figure
+          class="absolute right-0 translate-y-30 lg:translate-y-40 xl:translate-y-25 xl:translate-x-[-40%]"
+        >
+          <img
+            class="w-sm md:w-md lg:w-lg border border-transparent rounded-lg"
+            src="/iu-image.jpg"
+            alt="image of IU"
+          />
+        </figure>
       </section>
       <section aria-label="spotify-data">
-        <h1>Dữ liệu spotify</h1>
+        <h1 class="text-2xl font-bold">Dữ liệu spotify</h1>
         <!-- TODO: sử dụng Spotify API để crawl và hiển thị dữ liệu của idol -->
       </section>
       <section aria-label="latest-blog">
-        <h1>Bài viết mới nhất</h1>
+        <h1 class="text-2xl font-bold">Bài viết mới nhất</h1>
         <article>
           <h2 aria-label="title">Tiêu đề</h2>
           <section aria-label="created-time">19-05-2023</section>
@@ -34,10 +51,19 @@ import { SITE_DESCRIPTION,SITE_TITLE } from "../consts";
         </article>
       </section>
       <section aria-label="latest-video">
-        <h1>Video ca nhạc gần đây</h1>
+        <h1 class="text-2xl font-bold">Video ca nhạc gần đây</h1>
         <!-- TODO: sử dụng https://github.com/justinribeiro/lite-youtube để render video dễ hơn -->
+        <section
+          aria-label="videos"
+          class="grid md:grid-cols-2 lg:grid-cols-3 gap-2"
+        >
+          <lite-youtube videoid="0-q1KafFCLU"></lite-youtube>
+          <lite-youtube videoid="D1PvIWdJ8xo"></lite-youtube>
+          <lite-youtube videoid="nM0xDI5R50E"></lite-youtube>
+        </section>
       </section>
     </main>
     <Footer />
+    <script type="module" src="/javascripts/lite-youtube@1.5.0/lite-youtube.js" />
   </body>
 </html>
